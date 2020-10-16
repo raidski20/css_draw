@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.sky {
+    position: relative;
+    height: 28vh;
+    width: 100%;
+    background: rgb(19, 153, 206);
+}
+
+.sky .sun {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    background: rgba(255, 174, 0, 0.884);
+}
+
+.sky .sun .sun-flames .sun-flame {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid rgba(255, 174, 0, 0.884)
+}
+
+.sky .sun .sun-flames .sun-flame:nth-child(1) {
+    top: -34%;
+    left: 34%;
+}
+
+.sky .sun .sun-flames .sun-flame:nth-child(2) {
+    bottom: -35%;
+    left: 32%;
+    transform: rotate(180deg);
+}
+
+.sky .sun .sun-flames .sun-flame:nth-child(3) {
+    top: 38%;
+    right: -34%;
+    transform: rotate(90deg);
+}
+
+.sky .sun .sun-flames .sun-flame:nth-child(4) {
+    top: 38%;
+    left: -35%;
+    transform: rotate(-90deg);
+}
+
+.sky .sun .sun-flames .sun-flame:nth-child(5) {
+    top: -14%;
+    right: -15%;
+    transform: rotate(45deg);
+}
+
+.sky .sun .sun-flames .sun-flame:nth-child(6) {
+    bottom: -16%;
+    right: -14%;
+    transform: rotate(130deg);
+}
+
+.sky .sun .sun-flames .sun-flame:nth-child(7) {
+    top: -14%;
+    left: -15%;
+    transform: rotate(-45deg);
+}
+
+.sky .sun .sun-flames .sun-flame:nth-child(8) {
+    bottom: -16%;
+    left: -14%;
+    transform: rotate(-130deg);
+}
+
+.sky .cloud {
+    position: relative;
+    /* float: right;
+    margin: 40px 40px 0; */
+    top: 50px;
+    margin: 0 0 0 350px;
+    width: 100px;
+    height: 40px;
+    background: #b4dffd;
+    border-radius: 100px;
+}
+
+.sky .cloud:nth-child(2) {
+    float: right;
+    margin: 0 40px 0;
+}
+
+.sky .cloud:after, .sky .cloud:before {
+    content: '';
+    position: absolute;
+    background: #b4dffd;
+}
+
+.sky .cloud:after {
+    width: 50px;
+    height: 60px;
+    top: -30px;
+    left: 41px;
+    border-radius: 100px;
+}
+
+.sky .cloud:before {
+    width: 40px;
+    height: 40px;
+    top: -21px;
+    right: 45px;
+    border-radius: 200px;
+}
+
+.grass {
+    position: relative;
+    height: 20.2vh;
+    width: 100%;
+    background: green;
+}
+
+.road-edge-lines {
+    display: flex;
+    width: 100%;
+}
+
+.road-edge-lines .road-edge-line {
+    background: white;
+    width: 25%;
+    height: 10px;
+}
+
+.road-edge-lines .road-edge-line:nth-child(2), .road-edge-lines .road-edge-line:nth-child(4) {
+    background: red;
+}
+
+.road {
+    position: relative;
+    height: 33vh;
+    width: 100%;
+    background: gray;
+    /* border-top: 2px dotted white; */
+    /* border-bottom: 2px dotted white; */
+}
+
+.road .road-lines {
+    position: absolute;
+    display: flex;
+    top: 55%;
+    left: 0;
+    height: 12px;
+    width: 100%;
+}
+
+.road .road-lines .road-line {
+    background: white;
+    height: 7px;
+    width: 30%;
+    margin-left: 30px;
+}
+
+.road .car {
+    position: relative;
+    display: flex;
+    width: 150px;
+    height: 70px;
+    margin: 15px 0 0 15px;
+    background: black;
+    border-radius: 5px 55px 5px 5px;
+    -webkit-border-radius: 5px 55px 5px 5px;
+    -moz-border-radius: 5px 55px 5px 5px;
+    -ms-border-radius: 5px 55px 5px 5px;
+    -o-border-radius: 5px 55px 5px 5px;
+    animation: car_move 8s linear 2s forwards;
+    -webkit-animation: car_move 8s linear 2s forwards;
+}
+
+.road .car .car-front {
+    display: block;
+    width: 70px;
+    height: 100%;
+    padding: 7px 15px 0 10px;
+}
+
+.road .car .car-front .car-front-door-window, .road .car .car-back .car-back-door-window {
+    position: relative;
+    background: white;
+    width: 50px;
+    height: 35px;
+}
+
+.road .car .car-front .car-front-door-window {
+    border-radius: 0 55px 0 0;
+}
+
+.road .car .car-back {
+    display: block;
+    width: 130px;
+    height: 100%;
+    padding: 7px 10px 0 15px;
+}
+
+.road .car .car-back .car-back-door-window {
+    border-radius: 55px 0 0 0;
+}
+
+.front-tyres, .back-tyres {
+    width: 30px;
+    height: 30px;
+    background: black;
+    border-radius: 30px;
+    position: absolute;
+    border: 2px solid #ccc;
+    bottom: -15px;
+    z-index: 1;
+}
+
+.front-tyres {
+    left: 15px;
+}
+
+.back-tyres {
+    right: 15px;
+}
+
+.front-tyres::after, .back-tyres::after {
+    content: "";
+    background: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    top: 5px;
+    left: 5px;
+    position: absolute;
+}
+
+@keyframes car_move {
+    0% {
+        left: 0;
+    }
+    50%, 100% {
+        left: 1170px;
+    }
+}
