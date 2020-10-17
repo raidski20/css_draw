@@ -125,6 +125,14 @@ body {
     height: 20.2vh;
     width: 100%;
     background: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grass button {
+    cursor: pointer;
+    padding: 7px;
 }
 
 .road-edge-lines {
@@ -147,8 +155,6 @@ body {
     height: 33vh;
     width: 100%;
     background: gray;
-    /* border-top: 2px dotted white; */
-    /* border-bottom: 2px dotted white; */
 }
 
 .road .road-lines {
@@ -179,8 +185,8 @@ body {
     -moz-border-radius: 5px 55px 5px 5px;
     -ms-border-radius: 5px 55px 5px 5px;
     -o-border-radius: 5px 55px 5px 5px;
-    animation: car_move 8s linear 2s forwards;
-    -webkit-animation: car_move 8s linear 2s forwards;
+    /* animation: car_move 8s linear 2s forwards;
+    -webkit-animation: car_move 8s linear 2s forwards; */
 }
 
 .road .car .car-front {
@@ -199,6 +205,10 @@ body {
 
 .road .car .car-front .car-front-door-window {
     border-radius: 0 55px 0 0;
+    -webkit-border-radius: 0 55px 0 0;
+    -moz-border-radius: 0 55px 0 0;
+    -ms-border-radius: 0 55px 0 0;
+    -o-border-radius: 0 55px 0 0;
 }
 
 .road .car .car-back {
@@ -210,6 +220,10 @@ body {
 
 .road .car .car-back .car-back-door-window {
     border-radius: 55px 0 0 0;
+    -webkit-border-radius: 55px 0 0 0;
+    -moz-border-radius: 55px 0 0 0;
+    -ms-border-radius: 55px 0 0 0;
+    -o-border-radius: 55px 0 0 0;
 }
 
 .front-tyres, .back-tyres {
@@ -221,6 +235,10 @@ body {
     border: 2px solid #ccc;
     bottom: -15px;
     z-index: 1;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 
 .front-tyres {
@@ -240,6 +258,68 @@ body {
     top: 5px;
     left: 5px;
     position: absolute;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.traffic-signal {
+    position: relative;
+    top: -110px;
+}
+
+.traffic-signal .handler {
+    height: 110px;
+    width: 10px;
+    background-color: #555;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -ms-border-radius: 10px 10px 0 0;
+    -o-border-radius: 10px 10px 0 0;
+}
+
+.traffic-signal .handler .lights-handler {
+    position: absolute;
+    height: 60px;
+    width: 20px;
+    top: 10px;
+    left: 10px;
+    background: #555;
+    padding: 9px 0 0 0;
+    border-radius: 0 10px 10px 0;
+    display: block;
+    -webkit-border-radius: 0 10px 10px 0;
+    -moz-border-radius: 0 10px 10px 0;
+    -ms-border-radius: 0 10px 10px 0;
+    -o-border-radius: 0 10px 10px 0;
+}
+
+.traffic-signal .handler .lights-handler .light {
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    margin-bottom: 3px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    opacity: 0.1;
+}
+
+.traffic-signal .handler .lights-handler .light:nth-child(2) {
+    background: red;
+    opacity: 1;
+}
+
+.traffic-signal .handler .lights-handler .light:nth-child(1) {
+    background: orange;
+}
+.traffic-signal .handler .lights-handler .light:nth-child(3) {
+    background: #15ef15;
+    margin-bottom: 0;
 }
 
 @keyframes car_move {
